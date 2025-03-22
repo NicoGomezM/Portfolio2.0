@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://NicoGomezM.github.io',
-  base: 'Porfolio2.0',
+  base: '/Porfolio2.0/',
 });
