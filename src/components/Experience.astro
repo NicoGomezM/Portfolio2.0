@@ -2,9 +2,9 @@
 import WorkIcon from '../icons/WorkIcon.astro'
 ---
 
-<div class ="w-full mx-auto lg:w-[740px] py-10">
+<div class ="">
     <h2 class="flex items-center text-3xl font-bold text-gray-900 dark:text-white pb-5">
-        <WorkIcon class="size-10 mr-2" /> Experiencia
+        <WorkIcon class="size-10 mr-2" /> <span data-key="experienceTitle"> Experiencia </span>
     </h2>
     <ol class="relative border-s border-gray-200 dark:border-gray-700 ">                  
         <li class="mb-10 ms-6">            
@@ -13,9 +13,12 @@ import WorkIcon from '../icons/WorkIcon.astro'
                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                 </svg>
             </span>
-            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Apoyo general en LABCIM UBB <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3">Mas Reciente</span></h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Noviembre 2024 - Actualidad</time>
-            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Participo como apoyo el laboratorio de la universidad revisando codigos, apoyando a la construccion de hardware, redactando documentación y ofreciendo mantencion a los elementos de HW y SW.</p>
+            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                <span data-key="experience1">Apoyo general en LABCIM UBB</span>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 ms-3" data-key="recent">Mas Reciente</span>
+            </h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-key="date1">Noviembre 2024 - Actualidad</time>
+            <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400" data-key="description1">Participo como apoyo el laboratorio de la universidad revisando codigos, apoyando a la construccion de hardware, redactando documentación y ofreciendo mantencion a los elementos de HW y SW.</p>
         </li>
         <li class="mb-10 ms-6">
             <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
@@ -23,9 +26,9 @@ import WorkIcon from '../icons/WorkIcon.astro'
                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                 </svg>
             </span>
-            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Desarrollo Proyecto Particular</h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Diciembre 2023 - Agosto 2024</time>
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Me encargue de desarrollar el software de un proyecto de investigación de la universidad, el cual consistia en un sistema de monitoreo de variables ambientales. Realice trabajos tanto de programación como de diseño y construccion de hardware ademas de la documentacion correspondiente.</p>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-key="experience2">Desarrollo Proyecto Particular</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-key="date2">Diciembre 2023 - Agosto 2024</time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400" data-key="description2">Me encargue de desarrollar el software de un proyecto de investigación de la universidad, el cual consistia en un sistema de monitoreo de variables ambientales. Realice trabajos tanto de programación como de diseño y construccion de hardware ademas de la documentacion correspondiente.</p>
         </li>
         <li class="ms-6">
             <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
@@ -33,9 +36,61 @@ import WorkIcon from '../icons/WorkIcon.astro'
                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                 </svg>
             </span>
-            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Tecnico en hardware</h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Diciembre 2020 - Actualidad</time>
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Encargado de la actualizacion, mantencion y reparacion de hardware dentro del grupo familiar y de amigos, ademas de la construccion de hardware para proyectos personales.</p>
+            <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white" data-key="experience3">Tecnico en hardware</h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" data-key="date3">Diciembre 2020 - Actualidad</time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400" data-key="description3">Encargado de la actualizacion, mantencion y reparacion de hardware dentro del grupo familiar y de amigos, ademas de la construccion de hardware para proyectos personales.</p>
         </li>
     </ol>
 </div>
+
+<script>
+    import traduction from '../utils/traductions.js';
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const translations = {
+            en: {
+                experienceTitle: "Experience",
+                recent: "Latest",
+                experience1: "General support in LABCIM UBB",
+                date1: "November 2024 - Present",
+                description1: "I participate as support in the university laboratory reviewing codes, supporting the construction of hardware, writing documentation, and offering maintenance to the HW and SW elements.",
+                experience2: "Development of a particular project",
+                date2: "December 2023 - August 2024",
+                description2: "I was in charge of developing the software for a university research project, which consisted of an environmental variable monitoring system. I did work in both programming and hardware design and construction as well as the corresponding documentation.",
+                experience3: "Hardware technician",
+                date3: "December 2020 - Present",
+                description3: "Responsible for updating, maintaining, and repairing hardware within the family and friends group, as well as building hardware for personal projects.",
+            },
+            es: {
+                experienceTitle: "Experiencia",
+                recent: "Mas Reciente",
+                experience1: "Apoyo general en LABCIM UBB",
+                date1: "Noviembre 2024 - Actualidad",
+                description1: "Participo como apoyo el laboratorio de la universidad revisando codigos, apoyando a la construccion de hardware, redactando documentación y ofreciendo mantencion a los elementos de HW y SW.",
+                experience2: "Desarrollo Proyecto Particular",
+                date2: "Diciembre 2023 - Agosto 2024",
+                description2: "Me encargue de desarrollar el software de un proyecto de investigación de la universidad, el cual consistia en un sistema de monitoreo de variables ambientales. Realice trabajos tanto de programación como de diseño y construccion de hardware ademas de la documentacion correspondiente.",
+                experience3: "Tecnico en hardware",
+                date3: "Diciembre 2020 - Actualidad",
+                description3: "Encargado de la actualizacion, mantencion y reparacion de hardware dentro del grupo familiar y de amigos, ademas de la construccion de hardware para proyectos personales.",
+            },
+            ja: {
+                experienceTitle: "経験",
+                recent: "最新",
+                experience1: "LABCIM UBBでの一般サポート",
+                date1: "2024年11月 - 現在",
+                description1: "私は大学の研究室でコードのレビュー、ハードウェアの構築のサポート、文書の作成、HWおよびSW要素のメンテナンスを提供するサポートとして参加しています。",
+                experience2: "特定のプロジェクトの開発",
+                date2: "2023年12月 - 2024年8月",
+                description2: "私は大学の研究プロジェクトのソフトウェアを開発する責任を持ちました。これは環境変数モニタリングシステムでした。プログラミングとハードウェアの設計および構築、および対応する文書の作成の両方で作業をしました。",
+                experience3: "ハードウェア技術者",
+                date3: "2020年12月 - 現在",
+                description3: "家族や友人のグループ内でのハードウェアの更新、メンテナンス、修理、および個人プロジェクトのためのハードウェアの構築を担当しています。",
+            }
+        };
+
+        setTimeout(() => {
+            traduction(translations);
+        }, 100);
+    });
+</script>

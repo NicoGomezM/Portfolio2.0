@@ -1,13 +1,14 @@
-<!-- component -->
-<!-- 
-<div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-<div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div> -->
+---
+import AboutPage from './aboutPopUp.astro';
+import CVPage from './cvPopUp.astro';
+import CONTACTPage from './contactPopUp.astro';
+---
 
 <style>
     @import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
     body {
-        font-family: 'Poppins', sans-serif;
+        
     }
     .hover\:w-full:hover {
         width: 100%;
@@ -24,65 +25,72 @@
 
     /* Estilo inicial: navbar parcialmente visible */
     .navbar {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(50%); /* Lo deja semi-visible */
-        width: auto;
-        z-index: 50;
-        transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave */
-        opacity: 0.2; /* Semi-transparente */
-    }
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%); /* Lo deja semi-visible */
+    width: auto;
+    z-index: 50;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave */
+    opacity: 0.5; /* Semi-transparente */
+    background: linear-gradient(to top, #2f2f2f, #2f2f2f92);
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+}
 
-    /* Al pasar el mouse, se hace completamente visible */
-    .navbar:hover {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
+.navbar:hover {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
 
-    /* Clase para ocultarlo */
-    .navbar.hidden {
-        transform: translateX(-50%) translateY(50%);
-        opacity: 0.2;
-    }
+.navbar a {
+    color: white; /* Texto e íconos en blanco */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+.navbar i {
+    color: white; /* Íconos en blanco */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
 
 </style>
 
 <div class="navbar fixed bottom-0 left-0 w-full z-50 flex items-center justify-center px-5 pt-5 ">
-    <div class="px-7 shadow-lg rounded-2xl mb-5 bg-white/70 backdrop-blur-lg">
+    <!-- <div class="px-7 shadow-lg rounded-2xl mb-5 bg-black/70 backdrop-blur-lg"> -->
         <div class="flex">
             <div class="flex-auto hover:w-full group">
                 <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
                     <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
-                        <i class="far fa-home text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1">Home</span>
+                        <i class="far fa-home text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1" data-key="home">Inicio</span>
+                    </span>
+                </a>
+            </div>
+            <div class="flex-auto hover:w-full group">
+                <a id="aboutButton" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
+                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
+                        <i class="far fa-info-circle text-2xl pt-1"></i>
+                        <span class="hidden group-hover:inline-block ml-3 align-bottom pb-1" data-key="about">Acerca de</span>
+                    </span>
+                </a>
+            </div>
+            <div class="flex-auto hover:w-full group">
+                <a href="#" id="cvButton" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
+                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
+                        <i class="far fa-file-contract text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1" data-key="cv">CV</span>
+                    </span>
+                </a>
+            </div>
+            <div class="flex-auto hover:w-full group">
+                <a href="#" id="contactButton" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
+                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
+                        <i class="far fa-phone-alt text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1" data-key="contact">Contacto</span>
                     </span>
                 </a>
             </div>
             <div class="flex-auto hover:w-full group">
                 <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
                     <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
-                        <i class="far fa-info-circle text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1">About</span>
-                    </span>
-                </a>
-            </div>
-            <div class="flex-auto hover:w-full group">
-                <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
-                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
-                        <i class="far fa-file-contract text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1">CV</span>
-                    </span>
-                </a>
-            </div>
-            <div class="flex-auto hover:w-full group">
-                <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
-                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
-                        <i class="far fa-phone-alt text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1">Contact</span>
-                    </span>
-                </a>
-            </div>
-            <div class="flex-auto hover:w-full group">
-                <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
-                    <span class="block px-1 py-1 border border-transparent group-hover:border-indigo-500 rounded-full group-hover:flex-grow">
-                        <i class="far fa-language text-2xl pt-1"></i><span class="hidden group-hover:inline-block ml-3 align-bottom pb-1">Language</span>
+                        <i class="far fa-language text-2xl pt-1"></i><span class="language-text hidden group-hover:inline-block ml-3 align-bottom pb-1" data-key="language">Idioma</span>
                     </span>
                 </a>
             </div>
@@ -90,16 +98,18 @@
     </div>
 </div>
 
+<AboutPage />
+<CVPage />
+<CONTACTPage />
+
 <script>
+
+    import traduction from '../utils/traductions.js';
+    import controlPopups from '../utils/controlP.js';
+
     document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM completamente cargado");
         const translations = {
-            en: {
-                home: "Home",
-                about: "About",
-                cv: "CV",
-                contact: "Contact",
-                language: "Language",
-            },
             es: {
                 home: "Inicio",
                 about: "Acerca de",
@@ -107,22 +117,29 @@
                 contact: "Contacto",
                 language: "Idioma",
             },
+            en: {
+                home: "Home",
+                about: "About",
+                cv: "CV",
+                contact: "Contact",
+                language: "Language",
+            },
+            ja: {
+                home: "ホーム",
+                about: "約",
+                cv: "履歴書",
+                contact: "接触",
+                language: "言語",
+            }
         };
 
-        let currentLanguage = "en"; // Idioma inicial
-        const languageButton = document.querySelector(".language-button");
+        setTimeout(() => {
+            traduction(translations);
+        }, 100);
 
-        if (languageButton) {
-            languageButton.addEventListener("click", function () {
-                // Cambiar idioma
-                currentLanguage = currentLanguage === "en" ? "es" : "en";
-
-                // Emitir un evento personalizado con el idioma actual
-                const languageChangeEvent = new CustomEvent("languageChange", {
-                    detail: { language: currentLanguage },
-                });
-                window.dispatchEvent(languageChangeEvent);
-            });
-        }
+        setTimeout(() => {
+            controlPopups(document);
+        }, 100);
+        
     });
 </script>

@@ -1,0 +1,106 @@
+---
+import CodeIcon from '../icons/CodeIcon.astro'
+--- 
+
+<style>
+    @import url(https://pro.fontawesome.com/releases/v5.10.0/css/all.css);
+    @import url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css);
+</style>
+
+<div class="pt-10">
+    <h2 class="flex items-center text-3xl font-bold text-gray-900 dark:text-white pb-5">
+        <CodeIcon class="size-10 mr-2" /> <span data-key="skilsTitle"> Habilidades </span>
+    </h2>
+    <ul class="grid gap-4">
+        <li class="border backdrop-blur-lg rounded-2xl p-4">
+            <h3 class="text-xl font-semibold dark:text-white rounded-2xl p-1 items-center flex justify-center" data-key="skillcode">Lenguajes de programacion</h3>
+            <ul class="grid grid-cols-2 sm:grid-cols-4 p-6 gap-8 justify-items-center">
+                <li class="flex items-center">
+                    <i class="devicon-html5-plain text-orange-500 text-6xl mr-2"></i> 
+                </li>
+                <li class="flex items-center">
+                    <i class="devicon-css3-plain text-blue-500 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-center">
+                    <i class="devicon-javascript-plain text-yellow-500 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-centar">
+                    <i class="devicon-c-plain text-blue-500 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-center">
+                    <i class="devicon-python-plain text-blue-400 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-centar">
+                    <i class="devicon-cplusplus-plain text-blue-500 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-centar">
+                    <i class="devicon-postgresql-plain text-blue-500 text-6xl mr-2"></i>
+                </li>
+                <li class="flex items-centar">
+                    <i class="devicon-latex-plain text-blue-500 text-6xl mr-2"></i>
+                </li>
+            </ul>
+        </li>
+        <li class="border backdrop-blur-lg rounded-2xl p-4">
+    <h3 class="text-xl font-semibold dark:text-white rounded-2xl p-1 items-center flex justify-center" data-key="skillplataform">
+        Tecnologias y herramientas de programacion
+    </h3>
+    <ul class="flex flex-col items-center w-full"> <!-- Contenedor padre centrado -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 p-6 gap-8 w-full justify-items-center max-w-3xl"> <!-- Contenedor grid centrado y con ancho máximo -->
+            <li class="flex items-center justify-center w-full"> <!-- Centrado doble -->
+                <i class="devicon-vscode-plain text-blue-500 text-6xl mx-auto"></i> <!-- mx-auto para centrado horizontal -->
+            </li>
+            <li class="flex items-center justify-center w-full">
+                <i class="devicon-androidstudio-plain colored text-purple-500 text-6xl mx-auto"></i>
+            </li>
+            <li class="flex items-center justify-center w-full">
+                <i class="devicon-arduino-plain-wordmark colored text-orange-500 text-6xl mx-auto"></i>
+            </li>
+            <li class="flex items-center justify-center w-full">
+                <i class="devicon-npm-original-wordmark colored text-orange-500 text-6xl mx-auto"></i>
+            </li>
+            <li class="flex items-center justify-center w-full">
+                <i class="devicon-git-plain-wordmark colored text-orange-500 text-6xl mx-auto"></i>
+            </li>
+            <li class="flex items-center justify-center w-full">
+                <i class="devicon-github-original-wordmark text-whi-500 text-6xl mx-auto"></i>
+            </li>
+        </div>
+    </ul>
+</li>  
+</div>
+
+<script>
+    import traduction from '../utils/traductions.js';
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const translations = {
+            es: {
+                skilsTitle: "Habilidades",
+                skillcode: "Lenguajes de programacion",
+                skillplataform: "Tecnologias y herramientas de programacion",
+                softskills: "Hablididades blandas",
+                otherskill: "Otros",
+            },
+            en: {
+                skilsTitle: "Skills",
+                skillcode: "Programming languages",
+                skillplataform: "Technologies and programming tools",
+                softskills: "Soft skills",
+                otherskill: "Others",
+            },
+            ja: {
+                skilsTitle: "スキル",
+                skillcode: "プログラミング言語",
+                skillplataform: "技術とプログラミングツール",
+                softskills: "ソフトスキル",
+                otherskill: "その他",
+            }
+        };
+
+        // Asegurarse de que los elementos con data-key estén disponibles
+        setTimeout(() => {
+            traduction(translations);
+        }, 100);
+    });
+</script>

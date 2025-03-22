@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Experience from '../components/Experience.astro';
+import Skils from '../components/Skils.astro';
 import '../styles/global.css'
 import '@fontsource-variable/lexend-deca';
 interface Props {
@@ -25,13 +26,17 @@ const { description, title } = Astro.props
 		<div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
 		<slot />
 		<Navbar />
-		<Experience />
+		<div class="w-full mx-auto lg:w-[740px] py-10">
+			<Experience />
+			<Skils />
+		</div>
 	</body>
 </html>
 
 <style is:global>
 	:root{
 		color-scheme: light dark;
+		--lang: 'es';
 	}
 
 	html [
@@ -39,6 +44,7 @@ const { description, title } = Astro.props
 	]
 
 	body {
+		font-family: 'Lexend Deca Variable', sans-serif;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

@@ -17,11 +17,13 @@ import SocialPill from '../icons/SocialPill.astro';
 	<main class="px-4">
 		<section class="w-full mx-auto lg:w-[740px] pt-10">
 			<img class="rounded-full size-25 mx-auto" src="https://avatars.githubusercontent.com/u/144281930?v=4" alt="Logo NGM" />
-			<h1 class="font-bold text-5xl flex pt-2">Hola 👋 Soy Nico</h1>
+			<h1 class="font-bold text-5xl flex pt-2" data-key="greeting">Hola 👋 Soy Nico</h1>
 			<h2 class="text-xl pt-5">
-				<span class="font-cursive">Desarrollador, programador y apasionado por la tecnología 💻.</span> Estudiante de la ilustre 
-				<span class="text-blue-400 opacity-70">Universidad del Bío-Bío</span><span class=""> en Concepcion, Chile.</span>
-				Con experiencia en multiples areas de la informatica.
+				<span class="description-text" data-key="description">Desarrollador, programador y apasionado por la tecnología 💻.</span>
+				<span data-key="flowers">Estudiante de la ilustre</span>
+				<span class="text-blue-400 opacity-70" data-key="university">Universidad del Bío-Bío</span>
+				<span data-key="location">en Concepción, Chile.</span>
+				<span data-key="experience">Con experiencia en múltiples áreas de la informática.</span>
 			</h2>
 			<nav class=" flex flex-warp gap-4 mt-8 ">
 				<SocialPill href="https://www.linkedin.com/in/nicol%C3%A1s-g%C3%B3mez-morgado-3697691a5/">
@@ -40,3 +42,39 @@ import SocialPill from '../icons/SocialPill.astro';
 		</section>
 	</main>
 </Layout>
+
+<script>
+	import traduction from '../utils/traductions.js';
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const translations = {
+            en: {
+                greeting: "Hello 👋 I'm Nico",
+                description: "Developer, programmer, and technology enthusiast 💻.",
+				flowers: "Student at the famous",
+                university: "University of Bío-Bío",
+                location: "in Concepción, Chile.",
+                experience: "With experience in multiple areas of computer science.",
+            },
+            es: {
+                greeting: "Hola 👋 Soy Nico",
+                description: "Desarrollador, programador y apasionado por la tecnología 💻.",
+				flowers: "Estudiante de la ilustre",
+                university: "Universidad del Bío-Bío",
+                location: "en Concepción, Chile.",
+                experience: "Con experiencia en múltiples áreas de la informática.",
+            },
+			ja:{
+				greeting: "こんにちは 👋 私はニコです",
+				description: "開発者、プログラマー、技術愛好家 💻。",
+				flowers: "有名な学生",
+				university: "ビオビオ大学",
+				location: "チリ、コンセプシオン。",
+				experience: "コンピューターサイエンスの複数の分野での経験を持っています。",
+			}
+		};
+        setTimeout(() => {
+            traduction(translations);
+        }, 100);
+    });
+</script>
