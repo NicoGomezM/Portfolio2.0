@@ -1,0 +1,47 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import './src/styles/global.css'
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import MailIcon from '../icons/MailIcon.astro';
+import SocialPill from '../icons/SocialPill.astro';
+
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout 
+	title='Portfolio NGM'
+	description='Tecnico Analista de Software, Licenciado en Ciencias de la Computacion y futuro Ingeniero Civil en Informatica. '
+>
+	<!-- <Welcome /> -->
+	<main class="px-4">
+		<section class="w-full mx-auto lg:w-[740px] pt-10">
+			<img class="rounded-full size-25 mx-auto" src="https://avatars.githubusercontent.com/u/144281930?v=4" alt="Logo NGM" />
+			<h1 class="font-bold text-5xl flex pt-2">Hola 👋 Soy Nico</h1>
+			<h2 class="text-xl pt-5">
+				<span class="font-cursive">Desarrollador, programador y apasionado por la tecnología 💻.</span> Estudiante de la ilustre 
+				<span class="text-blue-400 opacity-70">Universidad del Bío-Bío</span><span class=""> en Concepcion, Chile.</span>
+				Con experiencia en multiples areas de la informatica.
+			</h2>
+			<nav class=" flex flex-warp gap-4 mt-8 ">
+				<SocialPill href="https://www.linkedin.com/in/nicol%C3%A1s-g%C3%B3mez-morgado-3697691a5/">
+					<LinkedinIcon class ="size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="http://github.com/NicoGomezM">
+					<GitHubIcon class ="size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:nicogomezmorgado86@gmail.com">
+					<MailIcon class ="size-6"/>
+					nicogomezmorgado86@gmail.com
+				</SocialPill>
+			</nav>
+		</section>
+	</main>
+</Layout>
