@@ -8,6 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://github.com/NicoGomezM',
-  base: '/Porfolio2.0/',
+  site: 'https://NicoGomezM.github.io',
+  base: 'Porfolio2.0',
 });
