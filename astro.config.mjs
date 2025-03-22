@@ -15,5 +15,5 @@ export default defineConfig({
     }
   },
   site: 'https://NicoGomezM.github.io',
-  base: '/Porfolio2.0/',    
+  base: 'Portfolio2.0',    
 });
