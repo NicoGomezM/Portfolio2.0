@@ -49,7 +49,7 @@
 </style>
 
 <div class="navbar fixed bottom-0 left-0 w-full z-50 flex items-center justify-center px-5 pt-5 ">
-    <div class="px-7 shadow-lg rounded-2xl mb-5 bg-white">
+    <div class="px-7 shadow-lg rounded-2xl mb-5 bg-white/70 backdrop-blur-lg">
         <div class="flex">
             <div class="flex-auto hover:w-full group">
                 <a href="#" class="flex items-center justify-center text-center mx-auto px-4 py-2 group-hover:w-full text-indigo-500">
@@ -92,27 +92,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const navbar: HTMLElement | null = document.querySelector(".navbar");
-        let hideTimeout: number | undefined;
-
-        if (navbar) {
-            navbar.addEventListener("mouseenter", function () {
-                if (hideTimeout !== undefined) {
-                    clearTimeout(hideTimeout);
-                }
-                navbar.style.opacity = "1";
-            });
-
-            navbar.addEventListener("mouseleave", function () {
-                hideTimeout = setTimeout(() => {
-                    if (navbar) {
-                        navbar.style.opacity = "0.2";
-                    }
-                }, 200);
-            });
-        }
-    });
-    document.addEventListener("DOMContentLoaded", function () {
         const translations = {
             en: {
                 home: "Home",
@@ -120,7 +99,6 @@
                 cv: "CV",
                 contact: "Contact",
                 language: "Language",
-                experience: "General Experience",
             },
             es: {
                 home: "Inicio",
@@ -128,31 +106,22 @@
                 cv: "CV",
                 contact: "Contacto",
                 language: "Idioma",
-                experience: "Experiencia General",
             },
         };
 
         let currentLanguage = "en"; // Idioma inicial
         const languageButton = document.querySelector(".language-button");
-        const translatableElements = {
-            home: document.querySelector(".home-text"),
-            about: document.querySelector(".about-text"),
-            cv: document.querySelector(".cv-text"),
-            contact: document.querySelector(".contact-text"),
-            language: document.querySelector(".language-text"),
-        };
 
         if (languageButton) {
             languageButton.addEventListener("click", function () {
                 // Cambiar idioma
                 currentLanguage = currentLanguage === "en" ? "es" : "en";
 
-                // Actualizar texto
-                // for (const key in translatableElements) {
-                //     if (translatableElements[key]) {
-                //         translatableElements[key].textContent = translations[currentLanguage][key];
-                //     }
-                // }
+                // Emitir un evento personalizado con el idioma actual
+                const languageChangeEvent = new CustomEvent("languageChange", {
+                    detail: { language: currentLanguage },
+                });
+                window.dispatchEvent(languageChangeEvent);
             });
         }
     });
